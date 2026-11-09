@@ -1,0 +1,6 @@
+rules:
+  - id: file-read-review
+    languages: [python]
+    message: "File read found. Check where the path comes from."
+    severity: INFO
+    pattern: '$PATH.read_text()'

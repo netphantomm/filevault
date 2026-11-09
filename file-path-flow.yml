@@ -1,0 +1,10 @@
+rules:
+  - id: file-path-flow
+    languages: [python]
+    message: "A path from the HTTP request reaches a file read."
+    severity: WARNING
+    mode: taint
+    pattern-sources:
+      - pattern: request.args.get(...)
+    pattern-sinks:
+      - pattern: '$PATH.read_text()'
